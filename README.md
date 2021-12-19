@@ -1,4 +1,4 @@
-# Get-log4j-Windows.ps1
+# Get-log4j-Windows-local.ps1
   
  Identify all log4j components on a single local windows servers. CVE-2021-44228. A single use copy - see https://github.com/KeysAU/Get-log4j-Windows.ps1 for multi computer.
  
