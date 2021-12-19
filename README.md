@@ -8,12 +8,12 @@
 
 # Script Running:
 
-![image](https://user-images.githubusercontent.com/38932932/146667594-aaed6dfc-14d9-4e59-b879-ab128f7c95b0.png)
+![image](https://user-images.githubusercontent.com/38932932/146668056-d8e09ef4-fde9-4eb3-b439-0e31dadd7707.png)
 
 # Export:
 
 Columns A - I:
-![image](https://user-images.githubusercontent.com/38932932/146667638-20cbe4d7-118d-40ad-8edb-7a79c4a205f4.png)
+![image](https://user-images.githubusercontent.com/38932932/146668104-309d907f-b9d7-4c9d-9110-d6f2c757cffa.png)
 
 Continued:
 ![image](https://user-images.githubusercontent.com/38932932/146667684-71ffdc04-19db-49cd-8009-9fc492032791.png)
