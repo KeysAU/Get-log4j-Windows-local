@@ -186,7 +186,7 @@ Foreach ($http_LocalListeningPort in $LocalListeningPorts) {
 
         Write-output $Results
     }
-    Start-Job -name $http_LocalListeningPort.httpUrl  -ScriptBlock $ScriptBlockWeb
+    Start-Job -name $http_LocalListeningPort.httpUrl  -ScriptBlock $ScriptBlockWeb | Out-Null
     
 }
 
@@ -231,7 +231,7 @@ Do {
         #Then its time we get the info about the job and then stop it
         if ($CurrentTime -gt $TimeoutTime) {
 
-            Write-Output "Job $($WebScan_RunningJob.Name) stuck, stopping.."
+            #Write-Output "Job $($WebScan_RunningJob.Name) stuck, stopping.."
 
             $WebLog2 = @{    
                 Local_Website     = $WebScan_RunningJob.Name
@@ -245,7 +245,7 @@ Do {
             $WebScan_Results += $TempObj12        
 
             $WebScan_RunningJob | Stop-Job
-            Write-Output "Job $($WebScan_RunningJob.Name) stopped."
+            #Write-Output "Job $($WebScan_RunningJob.Name) stopped."
 
         }
     }
@@ -254,10 +254,10 @@ Do {
 
     Foreach ($WebScan_CompletedJob in $WebScan_CompletedJobs) {   
 
-        Write-Output "Waiting 5 seconds for Job $($WebScan_CompletedJob.Name) to complete.."
+        #Write-Output "Waiting 5 seconds for Job $($WebScan_CompletedJob.Name) to complete.."
         Start-Sleep -Seconds 5  
 
-        Write-Output "Scan $($WebScan_CompletedJob.Name) complete."
+        #Write-Output "Scan $($WebScan_CompletedJob.Name) complete."
 
         $WebScan_ChildJob = $WebScan_CompletedJob.ChildJobs[0]
         $WebScan_ChildJobInfo = $WebScan_ChildJob.Output
@@ -444,8 +444,6 @@ $ObjProp3 = [ordered]@{
 }
 
 Write-host "15.) Complete."
-
-$ReportObj3.count
 
 $ReportObj3 | Export-csv C:\Temp\Log4j\Log4J-Report-$HostServer.csv -NoTypeInformation -Force
 
